@@ -1,18 +1,12 @@
+fileEntries = Dir::entries(".")
 
-CurrentDir = Dir::entries(".")
+p fileEntries 
 
-p CurrentDir
+onlyFiles = nil
 
-FileOnly = CurrentDir
-
-CurrentDir.each do |hoge|
-  FileOnly.select!{|hoge| File::ftype(hoge) == "file"}
+#ファイルエントリからファイルのみを抽出
+fileEntries.each do |x|
+  onlyFiles = fileEntries.delete_if{|x| File::ftype(x) == "directory"}
 end
 
-p FileOnly
-
-FileOnly.each do |hoge|
-  p hoge
-end
-
-
+p onlyFiles
