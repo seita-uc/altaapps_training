@@ -3,9 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	//問題01
-	str := "stressed"
+	str := []rune("stressed")
 	for i := len(str) - 1; i >= 0; i -= 1 {
-		fmt.Print(str[i])
+		fmt.Printf("%c", str[i])
 	}
 }

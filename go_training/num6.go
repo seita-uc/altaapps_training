@@ -1,7 +1,9 @@
 package main
 
-import "fmt"
-import "strings"
+import (
+	"fmt"
+	"strings"
+)
 
 func sentenceIntoWords(sentence string) []string {
 	split_str := []rune(sentence)
