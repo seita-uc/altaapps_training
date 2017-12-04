@@ -3,7 +3,7 @@ package main
 import "fmt"
 import "strings"
 
-func create_ngram(sentence string) []string {
+func createNgram(sentence string) []string {
 
 	letters := strings.Split(sentence, "")
 
@@ -15,7 +15,7 @@ func create_ngram(sentence string) []string {
 		}
 		letterResult = append(letterResult, strings.Join(letters[i:i+2], ""))
 	}
-	return remove_duplication(letterResult)
+	return removeDuplication(letterResult)
 }
 
 func remove(search string, set []string) []string {
@@ -48,7 +48,7 @@ func union(set1 []string, set2 []string) []string {
 	return new_str
 }
 
-func remove_duplication(set []string) []string {
+func removeDuplication(set []string) []string {
 	m := make(map[string]bool)
 	new_str := []string{}
 	for _, v := range set {
@@ -93,8 +93,8 @@ func difference(set1 []string, set2 []string) []string {
 func main() {
 	//文字bi-gramを求める
 	//重複したbi-gramは取り除く
-	setX := (create_ngram("paraparaparadise"))
-	setY := (create_ngram("paragraph"))
+	setX := (createNgram("paraparaparadise"))
+	setY := (createNgram("paragraph"))
 
 	//XとYの和集合
 	fmt.Println(union(setX, setY))
