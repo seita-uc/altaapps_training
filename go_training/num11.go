@@ -8,7 +8,7 @@ import (
 
 func main() {
 	num := 0
-	file, _ := os.Open(`hightemp.txt`)
+	file, _ := os.Open(`hoge.txt`)
 
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
